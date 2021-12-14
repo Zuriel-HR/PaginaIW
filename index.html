@@ -49,9 +49,27 @@
     </header>
     <main>
 
-        <!--Boton flotante-->
-        <a class="btn-flotante"> <!--Icono FontAwesome--> <i class="fas fa-envelope-open-text"></i> Newsletter</a>
-
+        <!--Boton flotante--> <!--Icono FontAwesome-->
+        <a href = "javascript: void (0)" id="btn-newsletter" class="btn-flotante" onclick = "document.getElementById ('light'). style.display = 'block'; document.getElementById ('fade'). style. display = 'block' "> <i class="fas fa-envelope-open-text"></i> Newsletter</a> 
+        
+        <!--Ventana flotante-->
+        <div id="light" class="white_content" align="center">
+            <h2> . . . Dejanos tus datos para recibir noticias semanales . . . </h2>
+             
+             <br>
+             <label for="nombre">Nombre Completo (max 50 caracteres):</label>
+             <input type="text" id="nombre" name="nombre" required minlength="1" maxlength="50" size="15">
+             <br><br>
+             <label for="correo">Correo electronico (max 50 caracteres):</label>
+             <input type="text" id="correo" name="correo" required minlength="1" maxlength="50" size="15">
+             <br><br>
+             <button type="button" class="btn btn-secondary">Enviar</button>
+ 
+            <a href = "javascript: void (0)" id="btn-newsletter-2" onclick = "document.getElementById ('light'). style.display = 'none'; document.getElementById ('fade'). style.display = 'none'" style = "position: absolute; right: 0px; top: 0px;"> CERRAR </a>
+         </div> 
+ 
+         <div id="fade" class="black_overlay"></div> 
+        
         <!--Menu Desplegable-->
         <div class="container2">
             <input type="checkbox" id="toggle">
