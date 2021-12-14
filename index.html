@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Inter:wght@300;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://kit.fontawesome.com/d40409e125.js" crossorigin="anonymous"></script>
+    </style>   
+    <!--Script necesario para usar popovers-->
+    <script>
+    $(document).ready(function(){
+        // Activamos los popovers
+        $('[data-bs-toggle="popover"]').popover();  
+    });
+    </script>
+    <!--Responsive-->
+    <link rel="stylesheet" href="./css/tablet.css" media="(min-width: 930px)">
+</head>
+<body>
+    <header>
+        <img src="./Assets/Img/crypto.png" alt="Logo CryptoWrld">
+        <div class="header--title-container">
+            <h1>¿Listo para la revolucion de las criptomonedas?</h1>
+            <p>CryptoWrld te ayuda a navegar entre los diferentes precios y tendencias</p>
+            <a href="#plans" class="header--buttom" onclick="reproducir()">Conoce nuestros planes <span></span></a>
+            <!--Sonido en botones--> 
+            <audio id="btn-audio" src="./Assets/Sonidos/Trans.mp3"> </audio>    
+                <!--Script necesario para usar sonido en botones-->
+                <script>
+                    let sound = true;
+                    let MiAudio = document.getElementById("btn-audio");
+
+                    function reproducir(){
+                        if(sound){
+                            MiAudio.play();
+                        }
+                    }
+                </script>
+        </div>
+    </header>
+    <main>
+
+        <!--Boton flotante-->
+        <a class="btn-flotante"> <!--Icono FontAwesome--> <i class="fas fa-envelope-open-text"></i> Newsletter</a>
+
+        <!--Menu Desplegable-->
+        <div class="container2">
+            <input type="checkbox" id="toggle">
+            <div class="menu">
+                <a href="#">Home</a>
+                <a href="#info">Info</a>
+                <a href="#ventajas">Ventajas</a>
+                <a href="#plans">Planes</a>
+            </div>
+            <div class="toggle">
+                        <label for="toggle" class="fa fa-plus"></label>
+            </div>
+        </div>
+
+        <section class="main-exchange-slide">
+            <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <img class="d-block w-100" src="./Assets/Img/Slide1.JPG" alt="First slide">
+                  </div>
+                  <div class="carousel-item">
+                    <img class="d-block w-100" src="./Assets/Img/Slide2.JPG" alt="Second slide">
+                  </div>
+                  <div class="carousel-item">
+                    <img class="d-block w-100" src="./Assets/Img/Slide3.JPG" alt="Third slide">
+                  </div>
+                </div>
+            </div>
+        </section>     
+        <section class="main-exchange-container" id="info">
+            <div class="main-exchange-container--title">
+                <h2>Visibilizamos todas las tasas de cambio.</h2>
+                <p>Traemos información en tiempo real de las casas de cambio y las monedas más importantes del mundo.</p>
+            </div>
+            <section class="main-tables-container">
+                <div class="main-currrency-table">
+                    <p class="currency-table--title">Monedas</p>
+                    <div class="currency-table--container">
+                        <table>            
+                            <tr>           
+                                <td class="table__top-left">Bitcoin</td>   
+                                <td class="table__top-right table__right">$1.96 <span class="down"></span></td>
+                            </tr>
+                            <tr>            
+                                <td>Ethereum</td>    
+                                <td class="table__right">$0.07 <span class="up"></span></td>
+                            </tr>
+                            <tr>            
+                                <td>Ripple</td>    
+                                <td class="table__right">$2.15 <span class="down"></span></td>
+                            </tr>
+                            <tr>            
+                                <td class="table__bottom-left">Stellar</td>   
+                                <td class="table__bottom-right table__right">$4.96 <span class="down"></span></td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="currency-table--date">
+                        <p> <b>Actualizado: </b>19 Julio 23:45</p>
+                    </div>
+                </div>
+                <div class="main-currrency-table" id="iFrame">
+                    <!--iFrame-->
+                    <iframe src="https://coin360.com/widget/map.html?amp%3Butm_medium=referral&amp%3Butm_source=cointelegraph&amp%3Butm_term=header&utm_campaign=menu&utm_source=embed_map" frameborder="0" title="Coin360.com: Cryptocurrency Market State" width="400" height="300"> </iframe>
+                </div>
+                <div class="main-commissions-table">
+                    <p class="commissions-table--title">Comisiones</p>
+                    <div class="commissions-table--container">
+                        <table>
+                            <tr>
+                                <td class="table__top-left">Bitrade</td>
+                                <td class="table__top-right table__right">$12.96</td>
+                            </tr>
+                            <tr>
+                                <td>Bitpreco</td>
+                                <td class="table__right">$13.07</td>
+                            </tr>
+                            <tr>
+                                <td>Novadax</td>
+                                <td class="table__right">$13.15</td>
+                            </tr>
+                            <tr>
+                                <td class="table__bottom-left">Coinext</td>
+                                <td class="table__bottom-right table__right">$14.96</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="commissions-table--date">
+                        <p> <b>Actualizado: </b>19 Julio 23:48</p>
+                    </div>
+                </div>
+            </section>
+            <div> <!--Progress Bar-->
+                <br>
+                <h2>No te quedes fuera de este boom</h2>
+                <p>Una de las propiedades más curiosas de Bitcoin es que el número máximo de monedas que se pueden crear está definido: 21 millones de Bitcoin.</p>
+                <label for="file">Bitcoins en circulación:</label>
+                <div class="progress" id="file">
+                    <div class="progress-bar bg-warning" role="progressbar" style="width: 90%" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+            </div>
+        </section>
+        <section class="main-product-detail" id="ventajas">
+            <span class="product-detail--batata-logo"></span>
+            <div class="product-detail--title">
+                <h2>Creamos un producto sin comparacion</h2>
+            </div>
+            <section class="product-cards--container" id="card1">
+                <article class="product-detail--card">
+                    <span class="clock"></span>
+                    <p class="product--card-title">Tiempo real</p>
+                    <p class="product--card-body">Nuestro API toma información minuto a minuto sobre las tasas que más determinan el comportamiento.</p>
+                </article>
+                <article class="product-detail--card">
+                    <span class="eye"></span>
+                    <p class="product--card-title">No hay tasas escondidas</p>
+                    <p class="product--card-body">Ni en la compra o al momento de exit, Batabit siempre te muestra el costo real de lo que estás adquiriendo.</p>
+                </article>
+                <article class="product-detail--card">
+                    <span class="dollar-sign"></span>
+                    <p class="product--card-title">Compara monedas</p>
+                    <p class="product--card-body">No más rumores, con Babtabit sabrás el valor real de cada moneda en el mercado actual.</p>
+                </article>
+                <article class="product-detail--card">
+                    <span class="check-circle"></span>
+                    <p class="product--card-title">Informacion confiable</p>
+                    <p class="product--card-body">Nuestras fuentes están 100% verificadas y continuamos auditando su contenido mientras se actualizan.</p>
+                </article>
+            </section>
+        </section>
+        <section class="bincoin-img-container">
+            <!--Establecemos un video como el fondo de una seccion de la pagina-->
+            <video onloadedmetadata="this.muted=true" autoplay loop class="bincoin-img-container">
+                <source src="./Assets/Videos/Crypto.mp4">     
+            </video>
+        </section>
+        <section class="main-plans-2">
+            <div> <!--Collapse--> <!--Boton--> <!--Font Awesome-->
+                <button type="button" class="btn btn-outline-warning" data-bs-target="#collapse1" data-bs-toggle="collapse" aria-controls="collapse1" aria-expanded="false"> <i class="fas fa-eye"></i>  Ver Herramientas </button>
+            </div>
+                <!--Contenido-->
+            <div class="collapse" id="collapse1">
+                <!--Galeria-->
+                <section id='galeria' class='container p-2'>
+                    <div class='row'>
+                        <div class='col-lg-4 col-md-6 col-sm-12 mt-4'>
+                            <img src="./Assets/Img/Days.JPG">
+                        </div>
+                        <div class='col-lg-4 col-md-6 col-sm-12 mt-4'>
+                            <img src="./Assets/Img/Fees.JPG">
+                        </div>
+                        <div class='col-lg-4 col-md-6 col-sm-12 mt-4'>
+                            <img src="./Assets/Img/Index.JPG">
+                        </div>
+                        <div class='col-lg-4 col-md-6 col-sm-12 mt-4'>
+                            <img src="./Assets/Img/Prices.JPG">
+                        </div>
+                        <div class='col-lg-4 col-md-6 col-sm-12 mt-4'>
+                            <img src="./Assets/Img/Map.JPG">
+                        </div>
+                        <div class='col-lg-4 col-md-6 col-sm-12 mt-4'>
+                            <img src="./Assets/Img/Bubbles.JPG">
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </section>
+        <section id="plans" class="main-plans-container">
+            <div class="plans--title">
+                <h2>Escoge el plan que mejor se ajuste a ti</h2>
+                <p>Cualquier plan te da acceso completo a nuestra plataforma</p>
+            </div>
+            <section class="plans-container--slider">
+                <article class="plans-container--card blue">
+                    <p class="recommended blue">Basico</p>
+                    <div class="plan-info-container">
+                        <h3 class="plan-card--title">Pago Mensual</h3>
+                        <p class="plan-card--price"><span></span>19</p>
+                        <p class="plan-card--saving">*Beneficios basicos</p>
+                        <!--Alertas con popover incrustado-->
+                        <div class="alert alert-secondary" role="alert" data-bs-toggle="popover" title="Plan Basico" data-bs-content="Acceso a comparacion de tasas de cambio/comisiones y las noticias mas recientes en tiempo real.">
+                                Obtener <a class="alert-link">mas información</a>
+                        </div>
+                        <!--Form con boton de pago con PayPal para suscripcion -->
+                            <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                                <input type="hidden" name="cmd" value="_s-xclick">
+                                <input type="hidden" name="hosted_button_id" value="762HHZ99TKABL">
+                                <input type="image" src="https://www.paypalobjects.com/es_XC/MX/i/btn/btn_subscribeCC_LG.gif" border="0" name="submit" alt="PayPal, la forma más segura y rápida de pagar en línea.">
+                                <img alt="" border="0" src="https://www.paypalobjects.com/es_XC/i/scr/pixel.gif" width="1" height="1">
+                            </form>
+                    </div>
+                </article>
+                <article class="plans-container--card orange">
+                    <p class="recommended orange">Recomendado</p>
+                    <div class="plan-info-container">
+                        <h3 class="plan-card--title">Pago Anual</h3>
+                        <p class="plan-card--price"><span></span>99</p>
+                        <p class="plan-card--saving">*Ahorra $129</p>
+                        <!--Alertas con popover incrustado-->
+                        <div class="alert alert-secondary" role="alert" data-bs-toggle="popover" title="Plan Basico" data-bs-content="Acceso a comparacion de tasas de cambio/comisiones y las noticias mas recientes en tiempo real.">
+                            Obtener <a class="alert-link">mas información</a>
+                        </div>
+                        <!--Form con boton de pago con PayPal para suscripcion -->
+                            <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                                <input type="hidden" name="cmd" value="_s-xclick">
+                                <input type="hidden" name="hosted_button_id" value="762HHZ99TKABL">
+                                <input type="image" src="https://www.paypalobjects.com/es_XC/MX/i/btn/btn_subscribeCC_LG.gif" border="0" name="submit" alt="PayPal, la forma más segura y rápida de pagar en línea.">
+                                <img alt="" border="0" src="https://www.paypalobjects.com/es_XC/i/scr/pixel.gif" width="1" height="1">
+                            </form>
+                    </div>
+                </article>
+                <article class="plans-container--card black">
+                    <p class="recommended black">Premium</p>
+                    <div class="plan-info-container">
+                        <h3 class="plan-card--title">Pago Anual</h3>
+                        <p class="plan-card--price"><span></span>199</p>
+                        <p class="plan-card--saving">+ Beneficios adicionales</p>
+                        <!--Alertas con popover incrustado-->
+                        <div class="alert alert-secondary" role="alert" data-bs-toggle="popover" title="Plan Premium" data-bs-content="Acceso a comparacion de tasas de cambio/comisiones y las noticias mas recientes en tiempo real. +Acceso a grupo de atención 24/7">
+                            Obtener <a class="alert-link">mas información</a>
+                        </div>
+                        <!--Form con boton de pago con PayPal para suscripcion -->
+                            <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                                <input type="hidden" name="cmd" value="_s-xclick">
+                                <input type="hidden" name="hosted_button_id" value="762HHZ99TKABL">
+                                <input type="image" src="https://www.paypalobjects.com/es_XC/MX/i/btn/btn_subscribeCC_LG.gif" border="0" name="submit" alt="PayPal, la forma más segura y rápida de pagar en línea.">
+                                <img alt="" border="0" src="https://www.paypalobjects.com/es_XC/i/scr/pixel.gif" width="1" height="1">
+                            </form>
+                    </div>
+                </article>
+            </section>
+        </section>
+        <section  class="main-plans-container">
+            <!--Collapse-->
+            <!--Botones--> 
+            <h1>Visitanos en nuestras oficinas</h1><br>
+            <div> <!--Font Awesome-->
+                <button type="button" class="btn btn-outline-warning" data-bs-target="#collapse2" data-bs-toggle="collapse" aria-controls="collapse2" aria-expanded="false"> <i class="fas fa-search-location"></i> Mostrar ubicación</button>
+            </div>
+        <!--Contenido-->
+        <div class="collapse" id="collapse2">
+                <!--Mapa para geolocalizacion-->
+                <iframe width="100%" height="500" src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=es&amp;q=CDMX,%20M%C3%A9xico%20+(CryptoWrld)&amp;t=p&amp;z=17&amp;ie=UTF8&amp;iwloc=B&amp;output=embed">
+                    <a href="https://www.gps.ie/car-satnav-gps/">Car Navigation Systems</a>
+                </iframe>
+        </div>
+        </section>
+    </main>
+    <footer>
+
+        <section class="rigth">
+            <!--Buscador interno-->
+            <form method="get" action='http://www.google.com/search' target='_blank' className='google__form'>
+                <input type="search" className='google__input dark:bg-white' autoComplete='off' name='q' placeholder='Búsqueda' required/>
+                <input type='submit' className='btn btn-primary' value="Google"/>
+            </form>
+        </section>
+        <section class="left">
+            <ul><!--Iconos FontAwesome-->
+                <li><i class="fab fa-linkedin"></i><a href="https://www.linkedin.com" target="blank_">    LinkedIn</a></li>
+                <li><i class="fab fa-instagram-square"></i><a href="https://instagram.com" target="blank_">    Instagram</a></li>
+                <li><i class="fab fa-telegram-plane"></i><a href="https://facebook.com" target="blank_">    Telegram</a></li>
+            </ul>
+        </section>
+    </footer>
+
+    <script>
+        $(document).ready(function(){
+            $('[data-bs-toggle="popover"]').popover();  
+        });
+    </script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+</body>
+</html>
